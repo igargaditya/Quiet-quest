@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library More Info</title>
+  </head>
+  <body>
+    <h1><%= libinfo.name %></h1>
+    <h2><%= libinfo.price %></h2>
+    <h3><%= libinfo.location %></h3>
+    <a href="/library">Go to all libraries</a>
+    <a href="/library/<%=libinfo.id %>/edit">Edit</a>
+    <form action="/library/<%=libinfo.id%>?_method=Delete" method="post">
+      <button>Delete</button>
+    </form>
+  </body>
+</html>
