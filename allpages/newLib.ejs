@@ -1,26 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Library</title>
-  </head>
-  <body>
-    <form action="/library" method="Post">
-      <div>
-        <label for="name">Enter Library name:</label>
-        <input type="text" name="name" id="name" />
-      </div>
-      <div>
-        <label for="location">Enter Location</label>
-        <input type="text" name="location" id="location" />
-      </div>
-      <div>
-        <label for="price">Enter price</label>
-        <input type="number" name="price" id="price" />
-        <button>Submit</button>
-      </div>
-    </form>
-    <a href="/library">ALL Library</a>
-  </body>
-</html>
+<%- layout('partials/BoilerPlate') %>
+
+<form class="row g-3 mt-3 ms-3 me-3" method="post" action="/library">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4" />
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword4" />
+  </div>
+  <div class="col-md-8">
+    <label
+      for="inputAddress"
+      class="form-label"
+      name="name"
+      value="Enter The Name of the Library"
+      >Library Name</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress"
+      name="name"
+      placeholder="Enter The Name of the Library"
+    />
+  </div>
+  <div class="col-md-4">
+    <label for="price" class="form-label">price</label>
+    <input type="number" class="form-control" id="price" name="price" />
+  </div>
+  <div class="col-md-8">
+    <label for="inputCity" class="form-label">City</label>
+    <input type="text" class="form-control" id="inputCity" name="location" />
+  </div>
+  <div class="col-md-4">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="inputZip" name="zipCode" />
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-light">Submit</button>
+  </div>
+</form>
+<a class="row g-3 mt-3 ms-3 me-3" href="/library">ALL Library</a>

@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+const ejsMate = require("ejs-mate");
 const methodoverride = require("method-override");
 // requiring our library model
 const Library = require("./models/lib.js");
@@ -13,9 +14,13 @@ mongoose
   .then(() => console.log("Database Connected"))
   .catch(() => console.log("Error while connecting database"));
 
+// Used to convert body into json
 app.use(express.urlencoded({ extended: true }));
+// use to make get post request into put patch
 app.use(methodoverride("_method"));
 
+// Ejs related
+app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "allpages"));
 

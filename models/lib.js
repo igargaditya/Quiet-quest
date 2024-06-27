@@ -7,13 +7,19 @@ const libSchema = new Schema({
     type: String,
     required: true,
   },
-  price: {
+  image: {
     type: String,
+  },
+  price: {
+    type: Number,
     default: 1000,
   },
   location: {
     type: String,
     required: true,
+  },
+  zipCode: {
+    type: Number,
   },
 });
 
